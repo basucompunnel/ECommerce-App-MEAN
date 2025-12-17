@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="login-wrapper">
+    <h2>Login</h2>
+
+    <div class="error-message">Error</div>
+
+    <form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required email placeholder="Enter your email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="6"
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    <div class="register-link">
+      <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+    </div>
+  </div>
+</div>

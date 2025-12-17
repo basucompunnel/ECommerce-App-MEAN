@@ -1,0 +1,72 @@
+header {
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: white;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background: #555;
+}
+
+nav a.active {
+  background: #007bff;
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.username {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+.logout-btn {
+  cursor: pointer;
+  background: #dc3545;
+}
+
+.logout-btn:hover {
+  background: #c82333;
+}
+
+main {
+  min-height: calc(100vh - 200px);
+}
+
+footer {
+  background: #f4f4f4;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  text-align: center;
+}
