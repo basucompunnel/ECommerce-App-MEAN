@@ -1,0 +1,29 @@
+### ===============================
+### Register User
+### ===============================
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+### ===============================
+### Login User
+### ===============================
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+### ===============================
+### Get Current User (Protected)
+### ===============================
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzYjUyODdmNDhlZTM5MzcwODBlMjIiLCJ1c2VybmFtZSI6ImpvaG5fZG9lIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NjYwNDQ5OTksImV4cCI6MTc2NjY0OTc5OX0.y1ls5ySFMxCc9JQrNnSN8ct6V9KT3KE0iLDpniqJDzs
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer {{token}}
