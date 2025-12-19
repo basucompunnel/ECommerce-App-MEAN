@@ -2,6 +2,9 @@ import express, { Application } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 
+import authRoutes from "../src/routes/auth.routes";
+import productRoutes from '../src/routes/product.routes'
+
 const app: Application = express();
 
 app.use(
@@ -17,8 +20,7 @@ app.get("/", (req, res) => {
   res.send("Server working!");
 });
 
-import authRoutes from "../src/routes/auth.routes";
-
 app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes);
 
 export default app;

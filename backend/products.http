@@ -1,0 +1,52 @@
+@baseUrl = http://localhost:3000/api/products
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQxNTA4NzI4MjcxYzZkODE1YmZlMDAiLCJ1c2VybmFtZSI6InRlc3RhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2NjEzNDU4OSwiZXhwIjoxNzY2NzM5Mzg5fQ.eoaB9AmVuWD-P4qAlIizyc3qfQDYcQPkSdcTtNvcq1c
+
+### ===============================
+### Get all products (Public)
+### ===============================
+GET {{baseUrl}}
+Accept: application/json
+
+
+### ===============================
+### Get product by ID (Public)
+### ===============================
+GET {{baseUrl}}/694153dfb673bba908367528
+Accept: application/json
+
+
+### ===============================
+### Create product (Admin only)
+### ===============================
+POST {{baseUrl}}
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "name": "iPhone 15",
+  "description": "Latest Apple smartphone",
+  "price": 79999,
+  "category": "electronics",
+  "stock": 10,
+  "imageUrl": "https://example.com/iphone15.jpg"
+}
+
+
+### ===============================
+### Update product (Admin only)
+### ===============================
+PUT {{baseUrl}}/6945134b3c906a96c6716750
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "price": 74999,
+  "stock": 15
+}
+
+
+### ===============================
+### Delete product (Admin only)
+### ===============================
+DELETE {{baseUrl}}/6945134b3c906a96c6716750
+Authorization: Bearer {{adminToken}}
