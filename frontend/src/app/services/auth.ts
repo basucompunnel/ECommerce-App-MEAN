@@ -16,21 +16,15 @@ export class AuthService {
   }
 
   register(data: RegisterRequest): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.apiUrl}/register`, data).pipe(
-      tap((response) => this.handleAuthResponse(response)),
-      catchError((error) => {
-        return throwError(() => error);
-      })
-    );
+    return this.http
+      .post<AuthResponse>(`${this.apiUrl}/register`, data)
+      .pipe(tap((response) => this.handleAuthResponse(response)));
   }
 
   login(data: LoginRequest): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.apiUrl}/login`, data).pipe(
-      tap((response) => this.handleAuthResponse(response)),
-      catchError((error) => {
-        return throwError(() => error);
-      })
-    );
+    return this.http
+      .post<AuthResponse>(`${this.apiUrl}/login`, data)
+      .pipe(tap((response) => this.handleAuthResponse(response)));
   }
 
   logout(): void {
